@@ -31,7 +31,7 @@ export default function Home() {
         </div>
 
         {/* Carousel Section */}
-        <div className="relative py-8">
+        <div className="relative py-16">
           <ImageCarousel items={carouselItems} />
         </div>
 
