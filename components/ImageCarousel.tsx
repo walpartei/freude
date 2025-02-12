@@ -58,24 +58,37 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
               </>
             ) : (
               <div className="relative w-full h-full">
-                <img
-                  src={item.src}
-                  alt={item.alt || 'App screenshot'}
-                  className="w-full h-full object-cover transition-opacity duration-300 opacity-0"
-                  onError={(e) => {
-                    console.error('Error loading image:', item.src);
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                  onLoad={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.classList.remove('opacity-0');
-                    target.classList.add('opacity-100');
-                  }}
-                />
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
                   <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
                 </div>
+                <img
+                  src={item.src}
+                  alt={item.alt || 'App screenshot'}
+                  className="w-full h-full object-cover transition-opacity duration-300"
+                  style={{ opacity: 0 }}
+                  onError={(e) => {
+                    console.error('Error loading image:', item.src);
+                    const target = e.target as HTMLImageElement;
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const spinner = parent.querySelector('.animate-pulse');
+                      if (spinner) {
+                        spinner.innerHTML = '<div class="text-red-500">Failed to load image</div>';
+                      }
+                    }
+                  }}
+                  onLoad={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.opacity = '1';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const spinner = parent.querySelector('.animate-pulse');
+                      if (spinner) {
+                        spinner.remove();
+                      }
+                    }
+                  }}
+                />
               </div>
             )}
           </div>
