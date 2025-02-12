@@ -3,11 +3,14 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    domains: ['www.whatmadeyouhappy.today'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.whatmadeyouhappy.today',
+      },
+    ],
   },
-  // Copy all files from public to out directory
-  distDir: 'out',
-  trailingSlash: true,
-  assetPrefix: '',
 }
 
 module.exports = nextConfig
