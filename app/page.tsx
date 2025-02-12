@@ -2,13 +2,9 @@ import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
 
-// Import videos
-import part1Video from '../public/videos/part1_appstore.mov';
-import part2Video from '../public/videos/part2_appstore.mov';
-
 const carouselItems = [
-  { type: 'video' as const, src: part1Video, alt: 'App preview video 1' },
-  { type: 'video' as const, src: part2Video, alt: 'App preview video 2' },
+  { type: 'video' as const, src: '/videos/part1_appstore.mov', alt: 'App preview video 1' },
+  { type: 'video' as const, src: '/videos/part2_appstore.mov', alt: 'App preview video 2' },
   { type: 'image' as const, src: '/IMG_3336_resized.PNG', alt: 'App screenshot 1', width: 1170, height: 2532 },
   { type: 'image' as const, src: '/IMG_3337_resized.PNG', alt: 'App screenshot 2', width: 1170, height: 2532 },
   { type: 'image' as const, src: '/IMG_FE3E2E19372D-1_resized.jpeg', alt: 'App screenshot 3', width: 1170, height: 2532 },
