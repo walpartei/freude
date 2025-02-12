@@ -3,8 +3,6 @@ import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
 
 const carouselItems = [
-  { type: 'video' as const, src: '/videos/part1_appstore.mov', alt: 'App preview video 1' },
-  { type: 'video' as const, src: '/videos/part2_appstore.mov', alt: 'App preview video 2' },
   { type: 'image' as const, src: '/images/screenshot1.png', alt: 'App screenshot 1' },
   { type: 'image' as const, src: '/images/screenshot2.png', alt: 'App screenshot 2' },
   { type: 'image' as const, src: '/images/screenshot3.png', alt: 'App screenshot 3' },
