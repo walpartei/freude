@@ -93,7 +93,7 @@ export default function Support() {
             <div>
               <h3 className="text-lg font-medium text-gray-900 mb-2">How do I create a photo book?</h3>
               <p className="text-gray-600">
-                Photo books are automatically created when you collect enough happy moments. Keep adding moments, and we'll notify you when your book is ready!
+                Photo books are automatically created when you collect enough happy moments. Keep adding moments, and we&apos;ll notify you when your book is ready!
               </p>
             </div>
 
