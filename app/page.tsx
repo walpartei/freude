@@ -2,18 +2,16 @@ import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
 
-const BASE_URL = 'https://raw.githubusercontent.com/walpartei/freude/main/public';
-
 const carouselItems = [
-  { type: 'video' as const, src: `${BASE_URL}/videos/part1_appstore.mov`, alt: 'App preview video 1' },
-  { type: 'video' as const, src: `${BASE_URL}/videos/part2_appstore.mov`, alt: 'App preview video 2' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot1.png`, alt: 'App screenshot 1' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot2.png`, alt: 'App screenshot 2' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot3.png`, alt: 'App screenshot 3' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot4.png`, alt: 'App screenshot 4' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot5.png`, alt: 'App screenshot 5' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot6.png`, alt: 'App screenshot 6' },
-  { type: 'image' as const, src: `${BASE_URL}/images/screenshot7.png`, alt: 'App screenshot 7' },
+  { type: 'video' as const, src: '/videos/part1_appstore.mov', alt: 'App preview video 1' },
+  { type: 'video' as const, src: '/videos/part2_appstore.mov', alt: 'App preview video 2' },
+  { type: 'image' as const, src: '/IMG_3336_resized.PNG', alt: 'App screenshot 1' },
+  { type: 'image' as const, src: '/IMG_3337_resized.PNG', alt: 'App screenshot 2' },
+  { type: 'image' as const, src: '/IMG_FE3E2E19372D-1_resized.jpeg', alt: 'App screenshot 3' },
+  { type: 'image' as const, src: '/IMG_FB85C18C77B9-1_resized.jpeg', alt: 'App screenshot 4' },
+  { type: 'image' as const, src: '/IMG_338CE4DCCE73-1_resized.jpeg', alt: 'App screenshot 5' },
+  { type: 'image' as const, src: '/IMG_2DBDC34C407E-1_resized.jpeg', alt: 'App screenshot 6' },
+  { type: 'image' as const, src: '/IMG_06710D2CCE4B-1_resized.jpeg', alt: 'App screenshot 7' },
 ];
 
 export default function Home() {
