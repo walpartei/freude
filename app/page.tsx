@@ -5,13 +5,13 @@ import TestFlightSignup from '../components/TestFlightSignup';
 const carouselItems = [
   { type: 'video' as const, src: '/videos/part1_appstore.mov', alt: 'App preview video 1' },
   { type: 'video' as const, src: '/videos/part2_appstore.mov', alt: 'App preview video 2' },
-  { type: 'image' as const, src: '/IMG_3336_resized.PNG', alt: 'App screenshot 1' },
-  { type: 'image' as const, src: '/IMG_3337_resized.PNG', alt: 'App screenshot 2' },
-  { type: 'image' as const, src: '/IMG_FE3E2E19372D-1_resized.jpeg', alt: 'App screenshot 3' },
-  { type: 'image' as const, src: '/IMG_FB85C18C77B9-1_resized.jpeg', alt: 'App screenshot 4' },
-  { type: 'image' as const, src: '/IMG_338CE4DCCE73-1_resized.jpeg', alt: 'App screenshot 5' },
-  { type: 'image' as const, src: '/IMG_2DBDC34C407E-1_resized.jpeg', alt: 'App screenshot 6' },
-  { type: 'image' as const, src: '/IMG_06710D2CCE4B-1_resized.jpeg', alt: 'App screenshot 7' },
+  { type: 'image' as const, src: '/images/screenshot1.png', alt: 'App screenshot 1' },
+  { type: 'image' as const, src: '/images/screenshot2.png', alt: 'App screenshot 2' },
+  { type: 'image' as const, src: '/images/screenshot3.png', alt: 'App screenshot 3' },
+  { type: 'image' as const, src: '/images/screenshot4.png', alt: 'App screenshot 4' },
+  { type: 'image' as const, src: '/images/screenshot5.png', alt: 'App screenshot 5' },
+  { type: 'image' as const, src: '/images/screenshot6.png', alt: 'App screenshot 6' },
+  { type: 'image' as const, src: '/images/screenshot7.png', alt: 'App screenshot 7' },
 ];
 
 export default function Home() {
