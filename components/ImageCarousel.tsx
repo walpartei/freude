@@ -32,13 +32,11 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
   return (
     <div className="relative w-full max-w-md mx-auto h-[600px] overflow-hidden rounded-2xl shadow-xl">
       <div 
-        className="absolute inset-0 flex transition-transform duration-500 ease-in-out" 
+        className="flex transition-transform duration-500 ease-in-out" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        <div className="flex">
-
         {items.map((item, index) => (
-          <div key={index} className="w-full h-full flex-shrink-0 relative">
+          <div key={index} className="min-w-full h-full flex-shrink-0 relative">
             {item.type === 'video' ? (
               <>
                 <video
