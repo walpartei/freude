@@ -48,7 +48,7 @@ export default function Home() {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Storage and Security</h2>
               <p className="text-gray-600">
                 All your data is stored locally on your device. We do not collect or store your personal 
-                information on our servers. Your privacy is important to us, and we've designed the app 
+                information on our servers. Your privacy is important to us, and we&apos;ve designed the app 
                 to keep your data under your control.
               </p>
             </section>
