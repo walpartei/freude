@@ -2,18 +2,25 @@ import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
 
-const BASE_URL = 'https://www.whatmadeyouhappy.today';
+// Import static assets
+import img1 from '../public/IMG_3336_resized.PNG';
+import img2 from '../public/IMG_3337_resized.PNG';
+import img3 from '../public/IMG_FE3E2E19372D-1_resized.jpeg';
+import img4 from '../public/IMG_FB85C18C77B9-1_resized.jpeg';
+import img5 from '../public/IMG_338CE4DCCE73-1_resized.jpeg';
+import img6 from '../public/IMG_2DBDC34C407E-1_resized.jpeg';
+import img7 from '../public/IMG_06710D2CCE4B-1_resized.jpeg';
 
 const carouselItems = [
-  { type: 'video' as const, src: `${BASE_URL}/videos/part1_appstore.mov`, alt: 'App preview video 1' },
-  { type: 'video' as const, src: `${BASE_URL}/videos/part2_appstore.mov`, alt: 'App preview video 2' },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_3336_resized.PNG`, alt: 'App screenshot 1', width: 1170, height: 2532 },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_3337_resized.PNG`, alt: 'App screenshot 2', width: 1170, height: 2532 },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_FE3E2E19372D-1_resized.jpeg`, alt: 'App screenshot 3', width: 1170, height: 2532 },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_FB85C18C77B9-1_resized.jpeg`, alt: 'App screenshot 4', width: 1170, height: 2532 },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_338CE4DCCE73-1_resized.jpeg`, alt: 'App screenshot 5', width: 1170, height: 2532 },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_2DBDC34C407E-1_resized.jpeg`, alt: 'App screenshot 6', width: 1170, height: 2532 },
-  { type: 'image' as const, src: `${BASE_URL}/IMG_06710D2CCE4B-1_resized.jpeg`, alt: 'App screenshot 7', width: 1170, height: 2532 },
+  { type: 'video' as const, src: '/videos/part1_appstore.mov', alt: 'App preview video 1' },
+  { type: 'video' as const, src: '/videos/part2_appstore.mov', alt: 'App preview video 2' },
+  { type: 'image' as const, src: img1, alt: 'App screenshot 1', width: 1170, height: 2532 },
+  { type: 'image' as const, src: img2, alt: 'App screenshot 2', width: 1170, height: 2532 },
+  { type: 'image' as const, src: img3, alt: 'App screenshot 3', width: 1170, height: 2532 },
+  { type: 'image' as const, src: img4, alt: 'App screenshot 4', width: 1170, height: 2532 },
+  { type: 'image' as const, src: img5, alt: 'App screenshot 5', width: 1170, height: 2532 },
+  { type: 'image' as const, src: img6, alt: 'App screenshot 6', width: 1170, height: 2532 },
+  { type: 'image' as const, src: img7, alt: 'App screenshot 7', width: 1170, height: 2532 },
 ];
 
 export default function Home() {

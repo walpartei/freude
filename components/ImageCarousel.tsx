@@ -3,13 +3,23 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-interface CarouselItem {
-  type: 'image' | 'video';
+import { StaticImageData } from 'next/image';
+
+interface VideoItem {
+  type: 'video';
   src: string;
+  alt?: string;
+}
+
+interface ImageItem {
+  type: 'image';
+  src: string | StaticImageData;
   alt?: string;
   width?: number;
   height?: number;
 }
+
+type CarouselItem = VideoItem | ImageItem;
 
 export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,18 +48,25 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
         {items.map((item, index) => (
           <div key={index} className="min-w-full h-full flex-shrink-0 relative">
             {item.type === 'video' ? (
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls={false}
-              >
-                <source src={item.src} type="video/quicktime" />
-                <source src={item.src} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <>
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls={false}
+                  src={item.src}
+                  onError={(e) => {
+                    console.error('Error loading video:', item.src);
+                    const target = e.target as HTMLVideoElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
+                  <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
+                </div>
+              </>
             ) : (
               <div className="relative w-full h-full">
                 <div className="relative w-full h-full">
