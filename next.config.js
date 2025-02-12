@@ -3,11 +3,13 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.whatmadeyouhappy.today',
+      },
+    ],
   },
-  // Enable static file serving
-  assetPrefix: '',
-  basePath: '',
-  trailingSlash: false,
 }
 
 module.exports = nextConfig

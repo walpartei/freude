@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function TestImage() {
   const [hasError, setHasError] = useState(false);
@@ -15,12 +16,14 @@ export default function TestImage() {
 
   return (
     <div className="w-64 h-64 mx-auto mb-8 relative">
-      <img 
-        src="./images/screenshot1.png"
-        alt="Test screenshot" 
-        className="w-full h-full object-cover rounded-lg shadow-lg"
-        onError={(e) => {
-          console.error('Error loading image:', e);
+      <Image
+        src="/images/screenshot1.png"
+        alt="Test screenshot"
+        width={256}
+        height={256}
+        className="rounded-lg shadow-lg object-cover"
+        onError={() => {
+          console.error('Error loading image');
           setHasError(true);
         }}
       />

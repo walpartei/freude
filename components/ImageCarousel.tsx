@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface CarouselItem {
   type: 'video' | 'image';
@@ -61,15 +62,16 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
                   <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
                 </div>
-                <img
+                <Image
                   src={item.src}
                   alt={item.alt || 'App screenshot'}
+                  width={600}
+                  height={800}
                   className="w-full h-full object-cover transition-opacity duration-300"
                   style={{ opacity: 0 }}
                   onError={(e) => {
                     console.error('Error loading image:', item.src);
-                    const target = e.target as HTMLImageElement;
-                    const parent = target.parentElement;
+                    const parent = e.currentTarget.parentElement;
                     if (parent) {
                       const spinner = parent.querySelector('.animate-pulse');
                       if (spinner) {
@@ -77,10 +79,9 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                       }
                     }
                   }}
-                  onLoad={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.opacity = '1';
-                    const parent = target.parentElement;
+                  onLoadingComplete={(e) => {
+                    e.style.opacity = '1';
+                    const parent = e.parentElement;
                     if (parent) {
                       const spinner = parent.querySelector('.animate-pulse');
                       if (spinner) {
