@@ -7,6 +7,8 @@ interface CarouselItem {
   type: 'image' | 'video';
   src: string;
   alt?: string;
+  width?: number;
+  height?: number;
 }
 
 export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
@@ -49,8 +51,9 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                 <Image
                   src={item.src}
                   alt={item.alt || 'App screenshot'}
-                  fill
-                  className="object-cover"
+                  width={item.width || 1170}
+                  height={item.height || 2532}
+                  className="object-cover w-full h-full"
                   sizes="(max-width: 768px) 100vw, 600px"
                   priority={index === 0}
                 />

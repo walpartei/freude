@@ -3,15 +3,15 @@ import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
 
 const carouselItems = [
-  { type: 'video' as const, src: '/videos/part1_appstore.mov' },
-  { type: 'video' as const, src: '/videos/part2_appstore.mov' },
-  { type: 'image' as const, src: '/images/IMG_3336_resized.PNG', alt: 'App screenshot 1' },
-  { type: 'image' as const, src: '/images/IMG_3337_resized.PNG', alt: 'App screenshot 2' },
-  { type: 'image' as const, src: '/images/IMG_FE3E2E19372D-1_resized.jpeg', alt: 'App screenshot 3' },
-  { type: 'image' as const, src: '/images/IMG_FB85C18C77B9-1_resized.jpeg', alt: 'App screenshot 4' },
-  { type: 'image' as const, src: '/images/IMG_338CE4DCCE73-1_resized.jpeg', alt: 'App screenshot 5' },
-  { type: 'image' as const, src: '/images/IMG_2DBDC34C407E-1_resized.jpeg', alt: 'App screenshot 6' },
-  { type: 'image' as const, src: '/images/IMG_06710D2CCE4B-1_resized.jpeg', alt: 'App screenshot 7' },
+  { type: 'video' as const, src: './videos/part1_appstore.mov' },
+  { type: 'video' as const, src: './videos/part2_appstore.mov' },
+  { type: 'image' as const, src: './images/IMG_3336_resized.PNG', alt: 'App screenshot 1', width: 1170, height: 2532 },
+  { type: 'image' as const, src: './images/IMG_3337_resized.PNG', alt: 'App screenshot 2', width: 1170, height: 2532 },
+  { type: 'image' as const, src: './images/IMG_FE3E2E19372D-1_resized.jpeg', alt: 'App screenshot 3', width: 1170, height: 2532 },
+  { type: 'image' as const, src: './images/IMG_FB85C18C77B9-1_resized.jpeg', alt: 'App screenshot 4', width: 1170, height: 2532 },
+  { type: 'image' as const, src: './images/IMG_338CE4DCCE73-1_resized.jpeg', alt: 'App screenshot 5', width: 1170, height: 2532 },
+  { type: 'image' as const, src: './images/IMG_2DBDC34C407E-1_resized.jpeg', alt: 'App screenshot 6', width: 1170, height: 2532 },
+  { type: 'image' as const, src: './images/IMG_06710D2CCE4B-1_resized.jpeg', alt: 'App screenshot 7', width: 1170, height: 2532 },
 ];
 
 export default function Home() {
