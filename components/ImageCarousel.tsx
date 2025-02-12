@@ -60,7 +60,21 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                     style={{ objectFit: 'cover' }}
                     sizes="(max-width: 768px) 100vw, 600px"
                     priority={index === 0}
+                    loading="eager"
+                    onError={(e) => {
+                      console.error('Error loading image:', item.src);
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                    className="transition-opacity duration-300 opacity-0"
+                    onLoadingComplete={(image) => {
+                      image.classList.remove('opacity-0');
+                      image.classList.add('opacity-100');
+                    }}
                   />
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
+                  <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
                 </div>
               </div>
             )}
