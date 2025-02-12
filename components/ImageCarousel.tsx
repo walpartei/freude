@@ -28,7 +28,7 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
   };
 
   return (
-    <div className="relative w-full max-w-[472px] aspect-[472/1024] mx-auto overflow-hidden rounded-2xl shadow-xl">
+    <div className="relative w-full max-w-[472px] h-[80vh] max-h-[1024px] mx-auto overflow-hidden rounded-2xl shadow-xl">
       <div 
         className="flex transition-transform duration-500 ease-in-out" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -45,7 +45,7 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                   width={472}
                   height={1024}
                   sizes="(max-width: 639px) 100vw, 472px"
-                  className="w-full h-full object-contain transition-opacity duration-300"
+                  className="w-full h-full object-scale-down transition-opacity duration-300"
                   style={{ opacity: 0 }}
                 onError={(e) => {
                   console.error('Error loading image:', item.src);
