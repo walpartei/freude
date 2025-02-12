@@ -11,6 +11,5 @@
         }
       ]
     }
-  ],
-  "buildCommand": "git lfs install && git lfs fetch && git lfs checkout && npm run build"
+  ]
 }
