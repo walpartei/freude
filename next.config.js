@@ -6,14 +6,23 @@ const nextConfig = {
   output: 'export',
   assetPrefix: '',
   basePath: '',
-  // Configure webpack to handle video files
   webpack: (config) => {
+    // Handle video files
     config.module.rules.push({
       test: /\.(mov|mp4)$/i,
-      type: 'asset/resource'
+      type: 'asset/resource',
+      generator: {
+        filename: 'videos/[name][ext]'
+      }
     });
     return config;
   },
+  // Copy files from public to out directory
+  experimental: {
+    outputFileTracingIncludes: {
+      '/**/*': ['./public/**/*']
+    }
+  }
 }
 
 module.exports = nextConfig
