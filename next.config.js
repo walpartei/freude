@@ -18,10 +18,8 @@ const nextConfig = {
     return config;
   },
   // Copy files from public to out directory
-  experimental: {
-    outputFileTracingIncludes: {
-      '/**/*': ['./public/**/*']
-    }
+  outputFileTracingIncludes: {
+    '/': ['./public/**/*']
   }
 }
 
