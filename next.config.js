@@ -4,11 +4,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  distDir: 'dist',
-  // Ensure all files from public are copied to output
-  async exportPathMap(defaultPathMap) {
-    return defaultPathMap;
-  },
+  // Enable static file serving
+  assetPrefix: '',
+  basePath: '',
+  trailingSlash: false,
 }
 
 module.exports = nextConfig

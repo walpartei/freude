@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { getImageUrl } from '../config/urls';
 
 export default function TestImage() {
   const [hasError, setHasError] = useState(false);
@@ -17,7 +16,7 @@ export default function TestImage() {
   return (
     <div className="w-64 h-64 mx-auto mb-8 relative">
       <img 
-        src={getImageUrl('images/screenshot1.png')}
+        src="./images/screenshot1.png"
         alt="Test screenshot" 
         className="w-full h-full object-cover rounded-lg shadow-lg"
         onError={(e) => {

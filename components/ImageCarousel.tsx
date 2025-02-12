@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getImageUrl } from '../config/urls';
 
 interface CarouselItem {
   type: 'video' | 'image';
@@ -63,7 +62,7 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                   <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
                 </div>
                 <img
-                  src={item.type === 'image' ? getImageUrl(item.src) : item.src}
+                  src={item.src}
                   alt={item.alt || 'App screenshot'}
                   className="w-full h-full object-cover transition-opacity duration-300"
                   style={{ opacity: 0 }}
