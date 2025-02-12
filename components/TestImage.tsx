@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 export default function TestImage() {
   const [hasError, setHasError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   if (hasError) {
     return (
@@ -16,14 +16,18 @@ export default function TestImage() {
 
   return (
     <div className="w-64 h-64 mx-auto mb-8 relative">
-      <Image
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+          <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
+        </div>
+      )}
+      <img
         src="/images/screenshot1.png"
         alt="Test screenshot"
-        width={256}
-        height={256}
-        className="rounded-lg shadow-lg object-cover"
-        onError={() => {
-          console.error('Error loading image');
+        className={`w-full h-full object-cover rounded-lg shadow-lg transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        onLoad={() => setIsLoading(false)}
+        onError={(e) => {
+          console.error('Error loading image:', e);
           setHasError(true);
         }}
       />
