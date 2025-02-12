@@ -2,7 +2,7 @@ import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
 
-// Import images to ensure they're included in the build
+// Import videos
 import part1Video from '../public/videos/part1_appstore.mov';
 import part2Video from '../public/videos/part2_appstore.mov';
 

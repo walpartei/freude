@@ -4,8 +4,6 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
-  assetPrefix: '',
-  basePath: '',
   webpack: (config) => {
     // Handle video files
     config.module.rules.push({
@@ -17,10 +15,12 @@ const nextConfig = {
     });
     return config;
   },
-  // Copy files from public to out directory
-  outputFileTracingIncludes: {
-    '/': ['./public/**/*']
-  }
+  // Ensure all assets are copied
+  distDir: 'out',
+  images: {
+    loader: 'custom',
+    loaderFile: './image-loader.js',
+  },
 }
 
 module.exports = nextConfig
