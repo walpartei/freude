@@ -26,7 +26,7 @@ export default function TestFlightSignup() {
       } else {
         setStatus('error');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
     }
   };

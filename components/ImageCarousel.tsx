@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 interface CarouselItem {
   type: 'image' | 'video';
@@ -28,10 +29,12 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
 
   return (
     <div className="relative w-full max-w-md mx-auto h-[600px] overflow-hidden rounded-2xl shadow-xl">
-      <div className="absolute inset-0 flex transition-transform duration-500 ease-in-out" 
-           style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+      <div 
+        className="absolute inset-0 flex transition-transform duration-500 ease-in-out" 
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
         {items.map((item, index) => (
-          <div key={index} className="min-w-full h-full flex-shrink-0">
+          <div key={index} className="min-w-full h-full flex-shrink-0 relative">
             {item.type === 'video' ? (
               <video
                 className="w-full h-full object-cover"
@@ -42,11 +45,16 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                 playsInline
               />
             ) : (
-              <img
-                src={item.src}
-                alt={item.alt || 'App screenshot'}
-                className="w-full h-full object-cover"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={item.src}
+                  alt={item.alt || 'App screenshot'}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  priority={index === 0}
+                />
+              </div>
             )}
           </div>
         ))}
