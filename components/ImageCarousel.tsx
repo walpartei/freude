@@ -40,12 +40,16 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
             {item.type === 'video' ? (
               <video
                 className="w-full h-full object-cover"
-                src={item.src}
                 autoPlay
                 loop
                 muted
                 playsInline
-              />
+                controls={false}
+              >
+                <source src={item.src} type="video/quicktime" />
+                <source src={item.src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             ) : (
               <div className="relative w-full h-full">
                 <div className="relative w-full h-full">
