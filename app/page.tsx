@@ -20,6 +20,19 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 py-16 space-y-24">
         {/* Hero Section */}
         <div className="text-center space-y-8">
+          {/* Test Image */}
+          <div className="w-64 h-64 mx-auto mb-8 relative">
+            <img 
+              src="/images/screenshot1.png" 
+              alt="Test screenshot" 
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+              onError={(e) => {
+                console.error('Error loading test image');
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
+          </div>
           <h1 className="text-5xl font-bold text-gray-900">What Made You Happy Today?</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Train your brain to find joy in the little things. Capture your daily moments
