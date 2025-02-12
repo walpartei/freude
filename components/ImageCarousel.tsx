@@ -40,12 +40,13 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                 <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
               </div>
               <Image
-                src={item.src}
-                alt={item.alt || 'App screenshot'}
-                width={472}
-                height={1024}
-                className="w-full h-full object-contain transition-opacity duration-300"
-                style={{ opacity: 0 }}
+                  src={item.src}
+                  alt={item.alt || 'App screenshot'}
+                  width={472}
+                  height={1024}
+                  sizes="(max-width: 639px) 100vw, 472px"
+                  className="w-full h-full object-contain transition-opacity duration-300"
+                  style={{ opacity: 0 }}
                 onError={(e) => {
                   console.error('Error loading image:', item.src);
                   const parent = e.currentTarget.parentElement;
@@ -67,6 +68,7 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                   }
                 }}
               />
+
             </div>
           </div>
         ))}
