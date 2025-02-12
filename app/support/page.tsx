@@ -14,7 +14,7 @@ export default function Support() {
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">Contact Us</h2>
           <form 
-            action="https://formspree.io/f/privacy@whatmadeyouhappy.today" 
+            action="https://formspree.io/l@lll.uno" 
             method="POST"
             className="space-y-6"
           >
