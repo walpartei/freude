@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
 import TestFlightSignup from '../components/TestFlightSignup';
-import TestImage from '../components/TestImage';
 
 const carouselItems = [
   { type: 'video' as const, src: '/videos/part1_appstore.mov', alt: 'App preview video 1' },
@@ -21,8 +20,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 py-16 space-y-24">
         {/* Hero Section */}
         <div className="text-center space-y-8">
-          {/* Test Image */}
-          <TestImage />
+
           <h1 className="text-5xl font-bold text-gray-900">What Made You Happy Today?</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Train your brain to find joy in the little things. Capture your daily moments

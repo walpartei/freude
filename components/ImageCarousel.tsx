@@ -35,8 +35,10 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
         className="absolute inset-0 flex transition-transform duration-500 ease-in-out" 
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
+        <div className="flex">
+
         {items.map((item, index) => (
-          <div key={index} className="min-w-full h-full flex-shrink-0 relative">
+          <div key={index} className="w-full h-full flex-shrink-0 relative">
             {item.type === 'video' ? (
               <>
                 <video
@@ -46,12 +48,35 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
                   muted
                   playsInline
                   controls={false}
+                  preload="auto"
                   src={item.src}
+                  onLoadStart={(e) => {
+                    const target = e.target as HTMLVideoElement;
+                    target.style.opacity = '0';
+                  }}
+                  onCanPlay={(e) => {
+                    const target = e.target as HTMLVideoElement;
+                    target.style.opacity = '1';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const spinner = parent.querySelector('.animate-pulse');
+                      if (spinner) {
+                        spinner.remove();
+                      }
+                    }
+                  }}
                   onError={(e) => {
                     console.error('Error loading video:', item.src);
                     const target = e.target as HTMLVideoElement;
-                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const spinner = parent.querySelector('.animate-pulse');
+                      if (spinner) {
+                        spinner.innerHTML = '<div class="text-red-500">Failed to load video</div>';
+                      }
+                    }
                   }}
+                  style={{ transition: 'opacity 300ms' }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 animate-pulse">
                   <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin" />
