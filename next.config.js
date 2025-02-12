@@ -1,10 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [],
-    unoptimized: true, // This will skip image optimization for static exports
+    unoptimized: true,
   },
-  output: 'export', // Enable static exports
+  output: 'export',
+  assetPrefix: '',
+  basePath: '',
+  // Configure webpack to handle video files
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(mov|mp4)$/i,
+      type: 'asset/resource'
+    });
+    return config;
+  },
 }
 
 module.exports = nextConfig

@@ -48,15 +48,16 @@ export default function ImageCarousel({ items }: { items: CarouselItem[] }) {
               />
             ) : (
               <div className="relative w-full h-full">
-                <Image
-                  src={item.src}
-                  alt={item.alt || 'App screenshot'}
-                  width={item.width || 1170}
-                  height={item.height || 2532}
-                  className="object-cover w-full h-full"
-                  sizes="(max-width: 768px) 100vw, 600px"
-                  priority={index === 0}
-                />
+                <div className="relative w-full h-full">
+                  <Image
+                    src={item.src}
+                    alt={item.alt || 'App screenshot'}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    priority={index === 0}
+                  />
+                </div>
               </div>
             )}
           </div>
