@@ -13,7 +13,7 @@ export default function Home() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
               <p className="text-gray-600">
-                Welcome to Moments. We respect your privacy and are committed to protecting your personal data. 
+                Welcome to Freude. We respect your privacy and are committed to protecting your personal data. 
                 This privacy policy explains how we handle your data when you use our app.
               </p>
             </section>
@@ -71,8 +71,8 @@ export default function Home() {
               <p className="text-gray-600">
                 If you have any questions about this Privacy Policy, please contact us at:
                 <br />
-                <a href="mailto:privacy@moments-app.com" className="text-blue-600 hover:text-blue-800">
-                  privacy@moments-app.com
+                <a href="mailto:privacy@whatmadeyouhappy.today" className="text-blue-600 hover:text-blue-800">
+                  privacy@whatmadeyouhappy.today
                 </a>
               </p>
             </section>

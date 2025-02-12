@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Moments App Privacy Policy",
-  description: "Privacy policy for the Moments app - Your personal moment capture companion",
+  title: "Freude App Privacy Policy",
+  description: "Privacy policy for Freude - What made you happy today?",
 };
 
 export default function RootLayout({
