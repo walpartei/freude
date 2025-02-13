@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
+import AppStoreButton from '../components/AppStoreButton';
 
 const carouselItems = [
   { type: 'image' as const, src: '/images/screenshot1.png', alt: 'App screenshot 1' },
@@ -24,14 +25,7 @@ export default function Home() {
             photobook delivered to your door.
           </p>
           <div className="pt-4">
-            <a
-              href="https://apps.apple.com/de/app/freude/id6738605105?l=en-GB"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
-            >
-              Download on the App Store
-            </a>
+            <AppStoreButton />
           </div>
         </div>
 
