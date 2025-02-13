@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import ImageCarousel from '../components/ImageCarousel';
-import TestFlightSignup from '../components/TestFlightSignup';
 
 const carouselItems = [
   { type: 'image' as const, src: '/images/screenshot1.png', alt: 'App screenshot 1' },
@@ -18,7 +17,6 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16 space-y-16 sm:space-y-24">
         {/* Hero Section */}
         <div className="text-center space-y-8">
-
           <h1 className="text-5xl font-bold text-gray-900">What Made You Happy Today?</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Train your brain to find joy in the little things. Capture your daily moments
@@ -26,7 +24,14 @@ export default function Home() {
             photobook delivered to your door.
           </p>
           <div className="pt-4">
-            <TestFlightSignup />
+            <a
+              href="https://apps.apple.com/de/app/freude/id6738605105?l=en-GB"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition-colors"
+            >
+              Download on the App Store
+            </a>
           </div>
         </div>
 
